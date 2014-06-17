@@ -1,4 +1,4 @@
 yeastmine
 =========
 
-using yeastmine (intermine) to mine SGD
+using yeastmine (intermine) to mine SGD data
