@@ -32,7 +32,12 @@ Add the script to your current directory and issue a command to tell python to r
 Typically,
 
     python scriptname.py
-   
+
+
+For example,
+
+    python protein_sizes_sorted.py
+
 You'll probably want to direct the output to a file.
 
     python scriptname.py > output_filename.txt
