@@ -3,7 +3,8 @@ YeastMine
 
 * Scripts using [YeastMine](http://yeastmine.yeastgenome.org/yeastmine/begin.do) (populated by [SGD](www.yeastgenome.org/) and powered by [InterMine](http://intermine.github.io/intermine.org/)) to collect [Saccharomyces Genome Database](www.yeastgenome.org/) data.
 
-* These scripts will work on free [PythonAnywhere](https://www.pythonanywhere.com/) accounts because InterMine and YeastMine were graciously added to the [Whitelisted sites for free users](https://www.pythonanywhere.com/whitelist/) when I requested. THANKS, PythonAnywhere! Of course, they will also work on your computer, server, or cloud instance or wherever you run Python programs that can access the internet.
+* These scripts will work on free [PythonAnywhere](https://www.pythonanywhere.com/) accounts because InterMine and YeastMine were graciously added to the [Whitelisted sites for free users](https://www.pythonanywhere.com/whitelist/) when I requested. THANKS, PythonAnywhere!  
+Of course, they will also work on your computer, server, or cloud instance or wherever you run Python programs that can access the internet.
 
 
 * Other than the scripts, running them does require Intermine module be installed on system.
