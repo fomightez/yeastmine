@@ -7,7 +7,7 @@ YeastMine
 Of course, they will also work on your computer, server, or cloud instance or wherever you run Python programs that can access the internet.
 
 
-* Other than the scripts, running them does require Intermine module be installed on system.
+* Running them does require Intermine module be installed on system.
 
 
 Installation of Intermine
@@ -16,7 +16,11 @@ Installation of Intermine
 
 Running the scripts
 ------------------
-
+Add the script to your current directory and issue a command to tell python to run it.
+Typically,
+   python 
+   
+You probably want to direct the output to a file.
 
 Additional Info
 ----------------
