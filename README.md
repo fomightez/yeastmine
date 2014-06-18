@@ -15,7 +15,7 @@ Installation of InterMine Python Web Service Client Module
 
 As described at [here](http://yeastmine.yeastgenome.org/yeastmine/api.do?subtab=python) you intstall the module on your system by
 
-   $ easy_install intermine
+    $ easy_install intermine
 
 (Dollar sign is used to indicate prompt. Don’t include that in your command.)  
 You may need to do that as a superuser do `sudo` depending on how your system is set up.
@@ -23,7 +23,7 @@ You may need to do that as a superuser do `sudo` depending on how your system is
 
 If you are choosing to use a PythonAnywhere account you still need to install the InterMine Python Web Service Client Module to your individual account. It is done very similarly. You just need to additionally pass the user flag ‘--user ', as described [here](https://www.pythonanywhere.com/wiki/InstallingNewModules).
  
-   $ easy_install --user intermine
+    $ easy_install --user intermine
 
 
 Running the scripts
