@@ -43,7 +43,7 @@ You'll probably want to direct the output to a file.
     python scriptname.py > output_filename.txt
 
 
-Find more information on general installing and running [here](http://yeastmine.yeastgenome.org/yeastmine/api.do?subtab=python). 
+Find more information on general installing and running InterMine [here](http://yeastmine.yeastgenome.org/yeastmine/api.do?subtab=python). 
 
 Additional Info
 ----------------
