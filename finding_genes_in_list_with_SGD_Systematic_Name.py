@@ -38,7 +38,7 @@ print "primaryIdentifier\tsecondaryIdentifier\tsymbol\tname\torganism.shortName\
 
 for row in query.rows():
 	if row["secondaryIdentifier"] in list_to_get_info_for:
-	#LIST OF FAVORITE GENES AND ADD AN 'AND' CONDITION TO ABOVE LINE TO LIMIT TO YOUR FAV GENES
+	#LIST OF FAVORITE GENES AND ADD AN 'AND' CONDITION TO ABOVE LINE TO LIMIT TO YOUR FAVORITE GENES, like so:
 	#if (row["secondaryIdentifier"] in list_to_get_info_for) & (row["symbol"] in my_favorite_genes):
 	    print row["primaryIdentifier"], row["secondaryIdentifier"], row["symbol"], row["name"], \
 	        row["organism.shortName"], row["proteins.symbol"], row["sgdAlias"], row["featureType"], \
