@@ -1,16 +1,16 @@
 #!/usr/bin/env python
 
-# This is an automatically generated script to run your query
-# to use it you will require the intermine python client.
-# To install the client, run the following command from a terminal:
-#
-#     sudo easy_install intermine
-#
-# For further documentation you can visit:
-#     http://www.intermine.org/wiki/PythonClient
+## USAGE: LIST ALL YEAST PROTEIN GENES IN ORDER OF SIZE.
+## SINCE EACH GENE IS ON A SINGLE LINE, WHEN VIEWING IN A TEXT EDITOR
+## YOU CAN JUST USE LINE NUMBER [MINUS ONE TO ACCOUNT FOR COLUMN NAMES LINE]
+## TO GET THE RANK.
 
-# The following two lines will be needed in every python script:
-from intermine.webservice import Service
+# See the README.txt for this script at the link below for more information:
+# https://github.com/fomightez/yeastmine
+
+## IMPETUS FOR THIS SCRIPT:
+## CURIOSITY ABOUT WHERE SOME GENE LIE IN THE SIZE SPECTRUM WITHIN YEAST.
+
 service = Service("http://yeastmine.yeastgenome.org/yeastmine/service")
 
 # Get a new query on the class (table) you will be querying:
