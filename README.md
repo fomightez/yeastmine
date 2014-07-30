@@ -18,7 +18,7 @@ As described at [here](http://yeastmine.yeastgenome.org/yeastmine/api.do?subtab=
     $ easy_install intermine
 
 (Dollar sign is used to indicate prompt. Don’t include that in your command.)  
-You may need to do that as a superuser do `sudo` depending on how your system is set up.
+You may need to do that as a superuser, i.e. include `sudo` at the start of that command, depending on how your system is set up.
 
 
 If you are choosing to use a [PythonAnywhere](https://www.pythonanywhere.com/) account, you still need to install the InterMine Python Web Service Client Module to your individual account. It is done very similarly. You just need to additionally pass the user flag ‘--user ', as described [here](https://www.pythonanywhere.com/wiki/InstallingNewModules).
