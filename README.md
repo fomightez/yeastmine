@@ -4,7 +4,7 @@ YeastMine
 * Scripts using [YeastMine](http://yeastmine.yeastgenome.org/yeastmine/begin.do) (populated by [SGD](www.yeastgenome.org/) and powered by [InterMine](http://intermine.github.io/intermine.org/)) to collect [Saccharomyces Genome Database](www.yeastgenome.org/) data.
 
 * These scripts will work on free [PythonAnywhere](https://www.pythonanywhere.com/) accounts because InterMine and YeastMine were graciously added to the [Whitelisted sites for free users](https://www.pythonanywhere.com/whitelist/) when I requested. THANKS, PythonAnywhere!  
-Of course, they will also work on your computer, server, or cloud instance or wherever you run Python programs that can access the internet.
+Of course, they will also work on your computer, server, or cloud instance or wherever you run Python programs that can access the internet. I just found for installing on [SourceLair](https://www.sourcelair.com) that while `easy_install intermine  ` didn't work, `pip install intermine` did work to install the InterMine module.
 
 
 * Running them does require InterMine Python Web Service Client module be installed on the system.
@@ -24,6 +24,9 @@ You may need to do that as a superuser, i.e. include `sudo` at the start of that
 If you are choosing to use a [PythonAnywhere](https://www.pythonanywhere.com/) account, you still need to install the InterMine Python Web Service Client Module to your individual account. It is done very similarly. You just need to additionally pass the user flag ‘--user ', as described [here](https://www.pythonanywhere.com/wiki/InstallingNewModules).
  
     $ easy_install --user intermine
+
+
+On [SourceLair](https://www.sourcelair.com) that while `easy_install intermine  ` didn't work, `pip install intermine` did work to install the InterMine module.
 
 
 Running the scripts
