@@ -7,11 +7,13 @@
 #     sudo easy_install intermine
 #
 # For further documentation you can visit:
-#     http://www.intermine.org/wiki/PythonClient
+#     http://intermine.readthedocs.org/en/latest/web-services/
 
 # The following two lines will be needed in every python script:
 from intermine.webservice import Service
 service = Service("http://yeastmine.yeastgenome.org/yeastmine/service")
+
+# query description - For a given gene(s), get a chosen length of upstream and/or downstream sequence along with the gene sequence.
 
 # Get a new query on the class (table) you will be querying:
 query = service.new_query("Gene")
@@ -27,11 +29,11 @@ query.add_view(
 
 # You can edit the constraint values below
 query.add_constraint("flankingRegions.direction", "=", "both", code = "C")
-query.add_constraint("Gene", "LOOKUP", "*", "S. cerevisiae", code = "B")
 query.add_constraint("flankingRegions.distance", "=", "1.0kb", code = "A")
+query.add_constraint("flankingRegions.includeGene", "=", "true", code = "D")
 
 # Uncomment and edit the code below to specify your own custom logic:
-# query.set_logic("A and B and C")
+# query.set_logic("A and C and D")
 
 for row in query.rows():
     print row["secondaryIdentifier"], row["symbol"], row["length"], \
