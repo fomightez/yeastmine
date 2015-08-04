@@ -67,6 +67,9 @@ Descriptions of the Scripts
 
 > Uses YeastMine to fetch genomic region (gene + 1kb upstream and downstream) for a yeast genes. This script doesn't produce a named file. It is suggested on the command line you direct the output to a file yourself. For example when running, `python gene_with_flanking_sequences.py > POP1_genomic_region.txt'. Or adapt it to meet your needs. The example is written to use POP1 but you can edit it to your gene.
 
+- protein_sizes_sorted.py
+
+> Uses YeastMine to sort yeast proteins based on size. This script doesn't produce a named file. It is suggested on the command line you redirect the output to a file yourself. (There was an issue with this ---> see last comment in script.) Or adapt it to meet your needs.
 
 Additional Info
 ----------------
