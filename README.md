@@ -58,6 +58,10 @@ Descriptions of the Scripts
 
 >Uses YeastMine to fetch information on all verfied proteins (currently 5917 mid-2105) and produces a file containing a sorted table of the counts and percent of occurences of amino acid residues in all the yeast proteins. The table is sorted with decreasing from the most abundant amino acids at tje top. The table can easily be pasted into Excel or Google Spreadsheets as it is tab-separated value document. The way the code is arranged you can easily substitute the part that accesses YeastMine to specify your own subset list of proteins to analyze for amino acid content.
 
+- finding_genes_in_list_with_SGD_Systematic_Name.py
+
+> Takes a list of genes provided in the long SGD systematic name form and collects more user friendly version of name and information for each gene from YeastMine. It is suggested on the command line you redirect the output to a file yourself. Or adapt it to meet your needs.
+
 - all_genes_and_flanking_sequences.py
 
 > Uses YeastMine to fetch genomic regions (gene + 1kb upstream and downstream) for all yeast genes. This script doesn't produce a named file. It is suggested on the command line you direct the output to a file yourself. For example when running, `python all_genes_and_flanking_sequences.py > all_genomic_regions.txt'. Or adapt it to meet your needs.
