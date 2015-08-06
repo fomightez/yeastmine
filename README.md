@@ -56,7 +56,11 @@ Descriptions of the Scripts
 
 - counting_amino_acid_residues_in_all_yeast_proteins.py
 
->Uses YeastMine to fetch information on all verfied proteins (currently 5917 mid-2105) and produces a file containing a sorted table of the counts and percent of occurences of amino acid residues in all the yeast proteins. The table is sorted with decreasing from the most abundant amino acids at tje top. The table can easily be pasted into Excel or Google Spreadsheets as it is tab-separated value document. The way the code is arranged you can easily substitute the part that accesses YeastMine to specify your own subset list of proteins to analyze for amino acid content.
+>Uses YeastMine to fetch information on all verfied proteins (currently 5917 mid-2105) and produces a file containing a sorted table of the counts and percent of occurences of amino acid residues in all the yeast proteins. The table is sorted with decreasing from the most abundant amino acids at the top. The table can easily be pasted into or opened in Excel or Google Spreadsheets as it is tab-separated value document. The way the code is arranged you can easily substitute the part that accesses YeastMine to specify your own subset list of proteins to analyze for amino acid content.
+
+- residue_clustering_determinator_ALL_proteins
+
+> Uses YeastMine to fetch information on all verfied proteins (currently 5917 mid-2105) and produces a file containing a sorted table of the density and clustering of certain amino acids. The tables produced can easily be pasted into or opened in Excel or Google Spreadsheets as it is tab-separated value document. The way the code is arranged you can easily substitute the part that accesses YeastMine to specify your own subset list of proteins to analyze for amino acid clustering.
 
 - finding_genes_in_list_with_SGD_Systematic_Name.py
 
