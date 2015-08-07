@@ -522,7 +522,7 @@ for row in query.rows():
     current_sequence = row["sequence.residues"]
     for i in range(0, len(current_sequence), step_to_move_window):
         sequence_window = current_sequence[i:i+Window_Size]
-        # Karlin et al 2002 cites their earlier work that says, "a 'typical' protein of 400 residues and average composition, a run of an individual amino acid is statistically significant (at the 0.1% significance level) if it is five or more residues long." So I picked one above that to be fuzzy to consider short sequences towards end of proteins. Also this allows consideration of some of sequences where the break of 10 perhaps falls arbitraily less than optimally given the step of 10 amino acids (vs one or some other low number) I used to limit computation and redundancy.
+        # Karlin et al 2002 cites their earlier work that says, "a 'typical' protein of 400 residues and average composition, a run of an individual amino acid is statistically significant (at the 0.1% significance level) if it is five or more residues long." So I picked a fuzzy number two above that because stop codon represented in text sequence as asterisk and to allow cosideration of some short sequences towards end of proteins. Also this allows consideration of some of sequences where the break of 10 perhaps falls arbitraily less than optimally given the step of 10 amino acids (vs one or some other low number) I used to limit computation and redundancy.
         if len(sequence_window) > 6:
             if analyze_triple_amino_acid_clustering_combo:
                 unsubstituted_seq_window = sequence_window
