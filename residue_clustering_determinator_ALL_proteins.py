@@ -516,10 +516,10 @@ table_data = []
 for row in query.rows():
     total_gene_count += 1
     current_protein_gene = row["genes.secondaryIdentifier"]
-    # For breaking up into chunks as a leapfrogging window, I used msw's answer on
-	# http://stackoverflow.com/questions/11636079/split-very-long-character-string-into-smaller-character-blocks-with-character-ov
-	# Split very long character string into smaller character blocks with character overlap
     current_sequence = row["sequence.residues"]
+    # For breaking up into chunks as a leapfrogging window, I used msw's answer on
+    # http://stackoverflow.com/questions/11636079/split-very-long-character-string-into-smaller-character-blocks-with-character-ov
+    # Split very long character string into smaller character blocks with character overlap
     for i in range(0, len(current_sequence), step_to_move_window):
         sequence_window = current_sequence[i:i+Window_Size]
         # Karlin et al 2002 cites their earlier work that says, "a 'typical' protein of 400 residues and average composition, a run of an individual amino acid is statistically significant (at the 0.1% significance level) if it is five or more residues long." So I picked a fuzzy number two above that because stop codon represented in text sequence as asterisk and to allow cosideration of some short sequences towards end of proteins. Also this allows consideration of some of sequences where the break of 10 perhaps falls arbitraily less than optimally given the step of 10 amino acids (vs one or some other low number) I used to limit computation and redundancy.
@@ -527,12 +527,12 @@ for row in query.rows():
             if analyze_triple_amino_acid_clustering_combo:
                 unsubstituted_seq_window = sequence_window
                 sequence_window = replace_KQE_with_dummy_amino_acid(sequence_window)
-	        density_score = density_calc (sequence_window, amino_acid_to_examine)
-	        adjancency_bonus = adjancency_bonus_calc (sequence_window, amino_acid_to_examine)
-	        density_with_adjancency_bonus = density_score + adjancency_bonus
-	        length_normalized_density_score = density_score * (len(sequence_window)/float(Window_Size))
-	        length_normalized_adjancency_bonus =  adjancency_bonus * (len(sequence_window)/float(Window_Size))
-	        length_normalized_density_and_adjancency = length_normalized_density_score + length_normalized_adjancency_bonus
+            density_score = density_calc (sequence_window, amino_acid_to_examine)
+            adjancency_bonus = adjancency_bonus_calc (sequence_window, amino_acid_to_examine)
+            density_with_adjancency_bonus = density_score + adjancency_bonus
+            length_normalized_density_score = density_score * (len(sequence_window)/float(Window_Size))
+            length_normalized_adjancency_bonus =  adjancency_bonus * (len(sequence_window)/float(Window_Size))
+            length_normalized_density_and_adjancency = length_normalized_density_score + length_normalized_adjancency_bonus
             if analyze_triple_amino_acid_clustering_combo:
                 table_data.append([row["symbol"], current_protein_gene, row["pI"], density_score, density_with_adjancency_bonus, length_normalized_density_score, length_normalized_density_and_adjancency, unsubstituted_seq_window])
             else:
