@@ -81,7 +81,7 @@ Descriptions of the Scripts
 > Uses YeastMine to fetch genomic region (gene + 1kb upstream and downstream) for a yeast genes. This script doesn't produce a named file. It is suggested on the command line you direct the output to a file yourself. For example when running, `python gene_with_flanking_sequences.py > POP1_genomic_region.txt'. Or adapt it to meet your needs. The example is written to use POP1 but you can edit it to your gene.
 
 - geneID_list_to_systematic_names.py
-- 
+
 > Standard Name --> Systematic Name  
 The script takes a list of yeast gene identifiers and changes them to be systematic names if it recognizes the standard name. It just adds the name to the new list if it doesn't match a systematic name.  
 Originally designed to adjust a gene list generated as output by Tophat to be useful for [T-profiler](http://www.t-profiler.org/index.html). As described [here](http://www.t-profiler.org/Saccharomyces/add_info/howtoupload.html), [T-profiler](http://www.t-profiler.org/index.html) wants the systematic ORF names at T-profiler.  
