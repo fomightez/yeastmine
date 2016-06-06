@@ -80,6 +80,15 @@ Descriptions of the Scripts
 
 > Uses YeastMine to fetch genomic region (gene + 1kb upstream and downstream) for a yeast genes. This script doesn't produce a named file. It is suggested on the command line you direct the output to a file yourself. For example when running, `python gene_with_flanking_sequences.py > POP1_genomic_region.txt'. Or adapt it to meet your needs. The example is written to use POP1 but you can edit it to your gene.
 
+- geneID_list_to_systematic_names.py
+- 
+> Standard Name --> Systematic Name  
+The script takes a list of yeast gene identifiers and changes them to be systematic names if it recognizes the standard name. It just adds the name to the new list if it doesn't match a systematic name.  
+Originally designed to adjust a gene list generated as output by Tophat to be useful for [T-profiler](http://www.t-profiler.org/index.html). As described [here](http://www.t-profiler.org/Saccharomyces/add_info/howtoupload.html), [T-profiler](http://www.t-profiler.org/index.html) wants the systematic ORF names at T-profiler.  
+Note that T-profiler seemed not accept data uploads May 2016 and [g:Profiler](http://biit.cs.ut.ee/gprofiler/), that is listed among T-profiler alternatives according to [GGSAASeqSP paper](http://www.nature.com/articles/srep06347), has functioning conversion ability built in for yeast gene lists.  
+Even given the conversion function of [g:Profiler](http://biit.cs.ut.ee/gprofiler/) you may wish to run this script first to clean up the list to make less work for yourself in the long run, especially if the data set is larger. [g:Profiler](http://biit.cs.ut.ee/gprofiler/) that is listed among T-profiler alternatives in [the GGSAASeqSP paper](http://www.nature.com/articles/srep06347), reported a few ambiguities came up from the data converted using this script. [g:Profiler](http://biit.cs.ut.ee/gprofiler/) gives you the option to resolve them manually and all such ambiguities are easily resolved. You just need to pick best match; match is obvious in all cases. For example from one list of 80 genes converted, only the genes `YLR154C-H` and `YNR073C` still elicted `Warning: Some gene identifiers are ambiguous. Resolve these manually?`, but these seem to be due to the fact these genes have paralogs and come up in the description of two genes. However, if one uses an unconverted version of the data from DESeq2, you'll have double the amoung of ambiguities to resolve.  
+To get only a list of gene IDs, like g:Profiler uses, you can easily discard the second column, i.e. log2 ratio, from the results of the script. One way to do that is with the `cut` command on the command line (Bash) like so, `cut -f1 INPUT_FILE > OUTPUT_FILE`.   Alternatively, you can use Excel to delete the column and then save the data elsewhere.
+
 - protein_sizes_sorted.py
 
 > Uses YeastMine to sort yeast proteins based on size. This script doesn't produce a named file. It is suggested on the command line you redirect the output to a file yourself. (There was an issue with this ---> see last comment in script.) Or adapt it to meet your needs.
