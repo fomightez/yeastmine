@@ -113,6 +113,8 @@ Several other of my code repositories hold code related to the use of YeastMine.
 - [My text-mining/text manipulation code repository](https://github.com/fomightez/text_mining) has several useful scripts.  
 In particular the `find_overlap_in_lists.py` script and related `find_overlap_in_lists_with_Venn.py` are particularly useful with gene lists that YeastMine can produce.
 
+- [My sequence work repository](https://github.com/fomightez/sequencework) has several useful scripts. Especially check the `Adjust_Annotation`, `ConvertSeq`, and `RetrieveSeq` sub-directories for scripts dealing with operations in line with the folder names.
+
 
 Additional Info
 ----------------
