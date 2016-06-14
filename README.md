@@ -56,7 +56,7 @@ Descriptions of the Scripts
 
 - counting_amino_acid_residues_in_all_yeast_proteins.py
 
-> Uses YeastMine to fetch information on all verfied proteins (currently 5917 mid-2105) and produces a file containing a sorted table of the counts and percent of occurences of amino acid residues in all the yeast proteins. The table is sorted in decreasing order with the most abundant amino acids at the top. The table can easily be pasted into or opened in Excel or Google Spreadsheets as it is tab-separated values (TSV) document. The way the code is arranged you can easily substitute the part that accesses YeastMine to specify your own subset list of proteins to analyze for amino acid content.
+> Uses YeastMine to fetch information on all verfied proteins (currently 5917 mid-2105) and produces a file containing a sorted table of the counts and percent of occurences of amino acid residues in all the yeast proteins. The table is sorted in decreasing order with the most abundant amino acids at the top. The table can easily be pasted into or opened in Excel or Google Spreadsheets as it is tab-separated values (`tsv`) document. The way the code is arranged you can easily substitute the part that accesses YeastMine to specify your own subset list of proteins to analyze for amino acid content.
 
 ---
 
