@@ -56,19 +56,19 @@ Descriptions of the Scripts
 
 - counting_amino_acid_residues_in_all_yeast_proteins.py
 
-> Uses YeastMine to fetch information on all verfied proteins (currently 5917 mid-2105) and produces a file containing a sorted table of the counts and percent of occurences of amino acid residues in all the yeast proteins. The table is sorted in decreasing order with the most abundant amino acids at the top. The table can easily be pasted into or opened in Excel or Google Spreadsheets as it is tab-separated values (`tsv`) document. The way the code is arranged you can easily substitute the part that accesses YeastMine to specify your own subset list of proteins to analyze for amino acid content.
+> Uses YeastMine to fetch information on all verfied proteins (currently 5917 mid-2015) and produces a file containing a sorted table of the counts and percent of occurences of amino acid residues in all the yeast proteins. The table is sorted in decreasing order with the most abundant amino acids at the top. The table can easily be pasted into or opened in Excel or Google Spreadsheets as it is tab-separated values (`tsv`) document. The way the code is arranged you can easily substitute the part that accesses YeastMine to specify your own subset list of proteins to analyze for amino acid content.
 
 ---
 
 - residue_clustering_determinator_ALL_proteins.py
 
-> Uses YeastMine to fetch information on all verfied proteins (currently 5917 mid-2105) and produces a file containing a sorted table of the density and clustering of certain amino acids.  The tables are sorted in decreasing order with the best scores for density/clustering at the top. The tables produced can easily be pasted into or opened in Excel or Google Spreadsheets as it is tab-separated values (`tsv`) document. The way the code is arranged you can easily substitute the part that accesses YeastMine to specify your own subset list of proteins to analyze for amino acid clustering.
+> Uses YeastMine to fetch information on all verfied proteins (currently 5917 mid-2015) and produces a file containing a sorted table of the density and clustering of certain amino acids.  The tables are sorted in decreasing order with the best scores for density/clustering at the top. The tables produced can easily be pasted into or opened in Excel or Google Spreadsheets as it is tab-separated values (`tsv`) document. The way the code is arranged you can easily substitute the part that accesses YeastMine to specify your own subset list of proteins to analyze for amino acid clustering.
 
 ---
 
 - residue_density_plotting_to_gbrowse_custom_track.py
 
-> Uses YeastMine to fetch information on all verfied proteins (currently 5917 mid-2105) and produces two files that can be uploaded to SGD's Gbrowse to produces tracks with residue density plotted. Combining all into one seems to bee to many points along the chromosomes for the format being used to handle, and so there are two file made and both need to be uploaded. If you alter code to handle your own subset and have less than 4000 genes/loci, you will only get one file to upload.
+> Uses YeastMine to fetch information on all verfied proteins (currently 5917 mid-2015) and produces two files that can be uploaded to SGD's Gbrowse to produces tracks with residue density plotted. Combining all into one seems to bee to many points along the chromosomes for the format being used to handle, and so there are two file made and both need to be uploaded. If you alter code to handle your own subset and have less than 4000 genes/loci, you will only get one file to upload.
 
 ---
 
