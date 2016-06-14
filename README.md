@@ -62,7 +62,7 @@ Descriptions of the Scripts
 
 - residue_clustering_determinator_ALL_proteins.py
 
-> Uses YeastMine to fetch information on all verfied proteins (currently 5917 mid-2105) and produces a file containing a sorted table of the density and clustering of certain amino acids.  The tables are sorted in decreasing order with the best scores for density/clustering at the top. The tables produced can easily be pasted into or opened in Excel or Google Spreadsheets as it is tab-separated value document. The way the code is arranged you can easily substitute the part that accesses YeastMine to specify your own subset list of proteins to analyze for amino acid clustering.
+> Uses YeastMine to fetch information on all verfied proteins (currently 5917 mid-2105) and produces a file containing a sorted table of the density and clustering of certain amino acids.  The tables are sorted in decreasing order with the best scores for density/clustering at the top. The tables produced can easily be pasted into or opened in Excel or Google Spreadsheets as it is tab-separated values (`tsv`) document. The way the code is arranged you can easily substitute the part that accesses YeastMine to specify your own subset list of proteins to analyze for amino acid clustering.
 
 ---
 
