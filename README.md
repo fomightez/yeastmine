@@ -105,6 +105,14 @@ To get only a list of gene IDs, like g:Profiler uses, you can easily discard the
 
 > Uses YeastMine to sort yeast proteins based on size. This script doesn't produce a named file. It is suggested on the command line you redirect the output to a file yourself. (There was an issue with this ---> see last comment in script.) Or adapt it to meet your needs.
 
+Related scripts
+---------------
+
+Several other of my code repositories hold code related to the use of YeastMine. Here are some:
+
+- [My text-mining/text manipulation code repository](https://github.com/fomightez/text_mining) has several useful scripts. In particular the `find_overlap_in_lists.py` script and related `find_overlap_in_lists_with_Venn.py` are particularly useful with gene lists that YeastMine can produce.
+
+
 Additional Info
 ----------------
 
