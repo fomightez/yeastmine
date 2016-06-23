@@ -211,9 +211,9 @@ else:
     # releases, this will have served to capture the data for when the input
     # data was originally created. At that time the version of YeastMine/SGD
     # should match the generated data.
-    # 2) This will make the script run by eliminating the need to access YeastMine
-    # and make on subsequent runs.
-    # The file will be stored as a ".py" file for ease but any tect editor will
+    # # 2) This will make the script run faster by eliminating the need to access
+    # YeastMine and make on subsequent runs.
+    # The file will be stored as a ".py" file for ease but any text editor will
     # be able to read it. It may need some manipulation to convery it to a form
     # that is easy to read for a human but the data will be there in almost
     # readable form.
