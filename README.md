@@ -74,7 +74,7 @@ Descriptions of the Scripts
 
 - make_simulated_yeast_gene_set.py
 
-> number --> random list with that number of genes  
+> number --> random list with that number of yeast genes  
 
 `make_simulated_yeast_gene_set.py` makes a simulated yeast gene set of user-determined size and saves a file of the generated gene list. The gene identifiers in the produced list are the SGD systematic names. The gene list file has each systematic IDs on an individual line.
 	
