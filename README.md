@@ -108,20 +108,21 @@ To get only a list of gene IDs, like g:Profiler uses, you can easily discard the
 
 - finding_genes_in_list_with_SGD_Systematic_Name.py
 
-> Takes a list of genes provided in the SGD systematic name form and collects more user friendly version of name, called the `Standard Name` at SGD, and information for each gene from YeastMine. It is suggested you redirect the output to a file yourself. Or adapt it to meet your needs.  
+> Takes a list of genes provided in the SGD systematic name form and collects more user friendly version of name, called the `Standard Name` at SGD, and information for each gene from YeastMine. It is suggested you redirect the output to a file yourself on the command line. Or adapt it to meet your needs.  
 This script can be particulary useful after getting a lits of genes in the SGD systematic name form so that you can see if any are of interest because most people are more familiar with the Standard Names.
 
 ---
 
 - all_genes_and_flanking_sequences.py
 
-> Uses YeastMine to fetch genomic regions (gene + 1kb upstream and downstream) for all yeast genes. This script doesn't produce a named file. It is suggested on the command line you direct the output to a file yourself. For example when running, `python all_genes_and_flanking_sequences.py > all_genomic_regions.txt'. Or adapt it to meet your needs.
+> Uses YeastMine to fetch genomic regions (gene + 1kb upstream and downstream) for all yeast genes. This script doesn't produce a named file. It is suggested you direct the output to a file yourself on the command line. For example when running, `python all_genes_and_flanking_sequences.py > all_genomic_regions.txt'. Or adapt it to meet your needs.
 
 ---
 
 - gene_with_flanking_sequences.py
 
-> Uses YeastMine to fetch genomic region (gene + 1kb upstream and downstream) for a yeast genes. This script doesn't produce a named file. It is suggested on the command line you direct the output to a file yourself. For example when running, `python gene_with_flanking_sequences.py > POP1_genomic_region.txt'. Or adapt it to meet your needs. The example is written to use POP1 but you can edit it to your gene.
+> Uses YeastMine to fetch genomic region (gene + 1kb upstream and downstream) for a yeast gene. This script doesn't produce a named file. It is suggested you direct the output to a file yourself on the command line. For example when running, `python gene_with_flanking_sequences.py > POP1_genomic_region.txt'. Or adapt it to meet your needs.  
+The example is written to use POP1, but you can edit it to specify your gene.
 
 ---
 
