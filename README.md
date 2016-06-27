@@ -62,13 +62,14 @@ Descriptions of the Scripts
 
 - residue_clustering_determinator_ALL_proteins.py
 
-> Uses YeastMine to fetch information on all verfied proteins (currently 5917 mid-2015) and produces a file containing a sorted table of the density and clustering of certain amino acids.  The tables are sorted in decreasing order with the best scores for density/clustering at the top. The tables produced can easily be pasted into or opened in Excel or Google Spreadsheets as it is tab-separated values (`tsv`) document. The way the code is arranged you can easily substitute the part that accesses YeastMine to specify your own subset list of proteins to analyze for amino acid clustering.
+> Uses YeastMine to fetch information on all verfied proteins (currently 5917 mid-2015) and produces a file containing a sorted table of the density and clustering of certain amino acids.  The tables are sorted in decreasing order with the best scores for density/clustering at the top. The tables produced can easily be pasted into or opened in Excel or Google Spreadsheets as it is tab-separated values (`tsv`) document.  
+The way the code is arranged you can easily substitute the part that accesses YeastMine to specify your own subset list of proteins to analyze for amino acid clustering.
 
 ---
 
 - residue_density_plotting_to_gbrowse_custom_track.py
 
-> Uses YeastMine to fetch information on all verfied proteins (currently 5917 mid-2015) and produces two files that can be uploaded to SGD's Gbrowse to produces tracks with residue density plotted. Combining all into one seems to bee to many points along the chromosomes for the format being used to handle, and so there are two file made and both need to be uploaded. If you alter code to handle your own subset and have less than 4000 genes/loci, you will only get one file to upload.
+> Uses YeastMine to fetch information on all verfied proteins (currently 5917 mid-2015) and produces two files that can be uploaded to SGD's Gbrowse to produces tracks with residue density plotted. Combining all into one seems to be too many points along the chromosomes for the format being used to handle, and so there are two file made and both need to be uploaded. If you alter code to handle your own subset and have less than 4000 genes/loci, you will only get one file to upload.
 
 ---
 
@@ -107,7 +108,8 @@ To get only a list of gene IDs, like g:Profiler uses, you can easily discard the
 
 - finding_genes_in_list_with_SGD_Systematic_Name.py
 
-> Takes a list of genes provided in the long SGD systematic name form and collects more user friendly version of name and information for each gene from YeastMine. It is suggested on the command line you redirect the output to a file yourself. Or adapt it to meet your needs.
+> Takes a list of genes provided in the SGD systematic name form and collects more user friendly version of name, called the `Standard Name` at SGD, and information for each gene from YeastMine. It is suggested you redirect the output to a file yourself. Or adapt it to meet your needs.  
+This script can be particulary useful after getting a lits of genes in the SGD systematic name form so that you can see if any are of interest because most people are more familiar with the Standard Names.
 
 ---
 
