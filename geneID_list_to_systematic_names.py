@@ -211,7 +211,7 @@ else:
     # releases, this will have served to capture the data for when the input
     # data was originally created. At that time the version of YeastMine/SGD
     # should match the generated data.
-    # # 2) This will make the script run faster by eliminating the need to access
+    # 2) This will make the script run faster by eliminating the need to access
     # YeastMine and make on subsequent runs.
     # The file will be stored as a ".py" file for ease but any text editor will
     # be able to read it. It may need some manipulation to convery it to a form
@@ -231,15 +231,28 @@ sys.stderr.write("\nReading input file and converting...") #backspace at start t
 input_file_stream = open(input_file_name , "r")
 for line in input_file_stream:
     lines_processed += 1
-    # split on tab
-    line_list = line.split("\t")
-    # gene_id = first in split
+    # split on space or tab
+    '''
+    line_list = line.split(maxsplit=1) # Only want one split so anything after gets
+    # added to produced text. By not specifying delimiter, it splies on ANY whitespace, includint tabs, see http://stackoverflow.com/questions/4309684/how-in-python-to-split-a-string-with-unknown-number-of-spaces-as-separator and
+    # https://docs.python.org/3/library/stdtypes.html#sequence-types-str-unicode-list-tuple-bytearray-buffer-xrange
     gene_id = line_list[0]
-    # log2value = second in split (not defining as variable since for several lines it doesn't get used). IT ALSO HAS LINE END AT END OF STRING.
+    rest_of_line = line_list[1]
+    # ACK THAT SOLUTION ONLY WORKS WITH PYTHON 3!! Cannot specify `maxsplit` in 2.7
+
+    '''
+    # Since using Python 2, I'll split default way with no separator argument and then grab everything after as separate item. Cannot ust argument for calling split because want it to split on both space and tabs as it does when called without an argumnet in Python 2. see -> http://stackoverflow.com/questions/4309684/how-in-python-to-split-a-string-with-unknown-number-of-spaces-as-separator
+    # gene_id = first in split
+    line_list = line.split()
+    gene_id = line_list[0]
+    rest_of_line = line [line.find(gene_id)+len(gene_id):] #find gets first occurence
+    # END OF PYTHON 2 SPECIFIC APPROACH
+
+    # log2value = second in split (not defining as variable since it doesn't get used). (AND TRYING TO MAKE GENERAL SOLUTION.) IT ALSO HAS LINE END AT END OF STRING.
     # if that gene_id is in the conversion dictionary, use to convert to systematic
     # name. If not, then leave line as it was.
     if gene_id in gene_id_to_syst_id_dict:
-    	new_file_text = new_file_text + gene_id_to_syst_id_dict[gene_id]+ "\t" + line_list[1]
+    	new_file_text = new_file_text + gene_id_to_syst_id_dict[gene_id]+ "\t" + rest_of_line.strip() + "\n"  #stripping the line ending and then adding one back so that it won't rely on there being text besides the indentifier on the line. If there is no text after the identifier, it will still get line ending there.
     elif not discarding_non_orfs:
     	new_file_text = new_file_text + line
 
