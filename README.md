@@ -106,6 +106,26 @@ Note that T-profiler seemed to not accept data uploads May 2016, and [g:Profiler
 Even given the conversion function of [g:Profiler](http://biit.cs.ut.ee/gprofiler/) you may wish to run this script first to clean up the list to make less work for yourself in the long run, especially if the data set is larger. [g:Profiler](http://biit.cs.ut.ee/gprofiler/) that is listed among T-profiler alternatives in [the GGSAASeqSP paper](http://www.nature.com/articles/srep06347), reported a few ambiguities came up from the data converted using this script. [g:Profiler](http://biit.cs.ut.ee/gprofiler/) gives you the option to resolve them manually and all such ambiguities are easily resolved. You just need to pick best match; match is obvious in all cases. For example from one list of 80 genes converted, only the genes `YLR154C-H` and `YNR073C` still elicted `Warning: Some gene identifiers are ambiguous. Resolve these manually?`, but these seem to be due to the fact these genes have paralogs and come up in the description of two genes. However, if one uses an unconverted version of the data from DESeq2, you'll have double the amoung of ambiguities to resolve.  
 Assuming your original input had a second column, to get only a list of gene IDs, for use in g:Profiler uses, you can easily discard the second column, i.e. log2 ratio, from the results of the script. One way to do that is with the `cut` command on the command line (Bash) like so, `cut -f1 INPUT_FILE > OUTPUT_FILE`.   Alternatively, you can use Excel to delete the column and then save the data elsewhere.
 
+#####example of input and output for `geneID_list_to_systematic_names.py`:
+
+sample of original input in `culled_extracted_geneIDs_and_log2change.txt`:
+```
+SMC3
+TOP2 
+NUT2	1.03
+COX2	0.106
+```
+
+output file produced after in `systematicIDs_and_log2change.txt`:
+```
+YJL074C	
+YNL088W	
+YPR168W	1.03
+Q0250	0.106
+
+
+```
+
 ---
 
 - finding_genes_in_list_with_SGD_Systematic_Name.py
