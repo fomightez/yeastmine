@@ -113,7 +113,7 @@ sample of original input in `culled_extracted_geneIDs_and_log2change.txt`:
 SMC3
 TOP2 
 NUT2	1.03
-COX2	0.106
+COX2	ipsum_lorem_de_facotoris_du_mondi ahdjs ahsjshs s sjjsjsjs 
 ```
 
 output file produced after in `systematicIDs_and_log2change.txt`:
@@ -121,7 +121,7 @@ output file produced after in `systematicIDs_and_log2change.txt`:
 YJL074C	
 YNL088W	
 YPR168W	1.03
-Q0250	0.106
+Q0250   ipsum_lorem_de_facotoris_du_mondi ahdjs ahsjshs s sjjsjsjs
 
 
 ```
