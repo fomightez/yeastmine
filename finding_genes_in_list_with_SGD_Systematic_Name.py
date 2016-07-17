@@ -1,5 +1,17 @@
 #!/usr/bin/env python
 
+## NOTE THAT THIS SCRIPT DOESN'T MAINTAIN ORDER OF INPUT LIST AND OUTPUT LIST
+## BEING THE SAME. I AM GOING TO REMAKE UNDER A DIFFERENT NAME
+## , `genes_in_list_with_SGD_Systematic_Name_to_standard_name`, FOR NOW SINCE
+## AT LEAST FIRST, I WON'T ADD THE ABILITY TO SET `FAVORITE` GENES LIKE I CAN HERE.
+## HOWEVER, ADD REFERENCE TO THE ORDER ISSUE AND POINT TO THE NEW ALTERNATIVE IN
+## THE GITHUB DOCUMENTATION FOR THIS OLD SCRIPT AND THEN UPDATE THIS BLURB. ALSO
+## ADD THE ORDER ISSUE TO THE JANUARY FENG LAB GROUP MEETING AND UPDATE THAT CODE
+## TO USE ONE THAT MAINTAINS THE ORDER. THIS IS FACT IS A REASON WHY USING THE
+## SCRIPT IS BETTER THAN PASTING YOUR LIST IN THE WEB INTERFACE. WEB INTERFACE
+## LOSES THE ORDER.
+
+
 ## USAGE: TAKES A LIST OF GENES PROVIDED IN THE LONG SGD SYSTEMATIC NAME FORM
 ## AND COLLECTS MORE USER FRIENDLY VERSION OF NAME AND INFORMATION FOR EACH GENE.
 
@@ -31,6 +43,8 @@ list_to_get_info_for = ["YAL030W", "YAL003W", "YAL001C", "YBL111C", "YBL092W", "
 #my_favorite_genes = ["NMD2", "MUD1", "TAN1"]
 
 # The following two lines will be needed in every python script:
+
+# import intermine #<--- also needed that line active when tried running on SourceLair.com after running `pip install intermine` in terminal
 from intermine.webservice import Service
 service = Service("http://yeastmine.yeastgenome.org/yeastmine/service")
 
