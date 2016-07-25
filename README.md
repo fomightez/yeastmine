@@ -29,7 +29,7 @@ If you are choosing to use a [PythonAnywhere](https://www.pythonanywhere.com/) a
     $ easy_install --user intermine
 
 
-On [SourceLair](https://www.sourcelair.com) that while `easy_install intermine  ` didn't work, `pip install intermine` did work to install the InterMine module.
+On [SourceLair](https://www.sourcelair.com), while `easy_install intermine  ` didn't work, `pip install intermine` did work to install the InterMine module.
 
 
 Running the scripts
