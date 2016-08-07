@@ -97,7 +97,7 @@ The script makes a simulated yeast gene set of user-determined size and saves a 
 
 - genes_in_list_with_SGD_Systematic_Name_to_standard_name.py
 
->  Systematic Name --> Standard ("common") Name
+>  Systematic Name --> Standard ("common") Name  
 Takes a list of genes provided in the SGD systematic name form and collects and produces as output the Standard Name at SGD (a.k.a. common name).  
 Importantly, the information in the output file is in the same order as the input list, unlike `finding_genes_in_list_with_SGD_Systematic_Name.py`.  
 The list has to have to have the gene identifiers at the start of each line. There can be other text on the line as long as the additional text is separated by space or tabs from the other identifier data at the start of the line. (It would be a simple edit from `line_list = line.split()` to `line_list = line.split(',')` in order to convert this script to work for comma-separated values on each line.) 
@@ -139,7 +139,6 @@ YJL074C
 YNL088W
 YPR168W	1.03
 Q0250   ipsum_lorem_de_facotoris_du_mondi ahdjs ahsjshs s sjjsjsjs
-
 ```
 
 **command:**
@@ -153,8 +152,6 @@ SMC3
 TOP2
 NUT2 1.03
 COX2 ipsum_lorem_de_facotoris_du_mondi ahdjs ahsjshs s sjjsjsjs
-
-
 ```
 
 #####example of input and output for `genes_in_list_with_SGD_Systematic_Name_to_standard_name.py` with `--details` flag:
