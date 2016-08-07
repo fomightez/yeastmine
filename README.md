@@ -92,7 +92,6 @@ The script makes a simulated yeast gene set of user-determined size and saves a 
 	  
 	optional arguments:
 	  -h, --help  show this help message and exit
-
 ---
 
 - genes_in_list_with_SGD_Systematic_Name_to_standard_name.py
