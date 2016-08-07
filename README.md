@@ -98,15 +98,16 @@ The script makes a simulated yeast gene set of user-determined size and saves a 
 - genes_in_list_with_SGD_Systematic_Name_to_standard_name.py
 
 >  Systematic Name --> Standard ("common") Name
-Takes a list of genes provided in the SGD systematic name form and collects and produces as output the Standard Name at SGD (a.k.a. common name).
-Importantly, the information in the output file is in the same order as the input list, unlike `finding_genes_in_list_with_SGD_Systematic_Name.py`.
-
-While the default is to only send the standard (common) gene name to the output, the addition of the optional flag `--details` to the command call will expand the information sent to the output list beyond the standard name to a full list of details about the yeast gene. This will quickly allow one an overview of the gene information for many genes without use of SGD in a browser. The details printed on each line follow this order: primaryIdentifier, secondaryIdentifier, symbol, name, sgdAlias, featureType, and description.
-
+Takes a list of genes provided in the SGD systematic name form and collects and produces as output the Standard Name at SGD (a.k.a. common name).  
+Importantly, the information in the output file is in the same order as the input list, unlike `finding_genes_in_list_with_SGD_Systematic_Name.py`.  
+The list has to have to have the gene identifiers at the start of each line. There can be other text on the line as long as the additional text is separated by space or tabs from the other identifier data at the start of the line. (It would be a simple edit from `line_list = line.split()` to `line_list = line.split(',')` in order to convert this script to work for comma-separated values on each line.) 
+The produced output will place the additional content on any line after the identifier.    
+While the default is to only send the standard (common) gene name to the output, the addition of the optional flag `--details` to the command call will expand the information sent to the output list beyond the standard name to a full list of details about the yeast gene. This will quickly allow one an overview of the gene information for many genes without use of SGD in a browser. The details printed on each line follow this order: primaryIdentifier, secondaryIdentifier, symbol, name, sgdAlias, featureType, and description.  
 A related script that employs a gtf file, which is common for many Cufflinks-related pipelines, in order to convert systematic names to yeast standard (common) gene names is available, see `systematic_names_to_standard_names_using_cufflinks_gtf.py` in the [Adjust_lists repository](https://github.com/fomightez/sequencework/tree/master/Adjust_lists).
 
 **Usage**
 
+```
 usage: genes_in_list_with_SGD_Systematic_Name_to_standard_name [-h] [-d] FILE
 
 genes_in_list_with_SGD_Systematic_Name_to_standard_name.py uses data from
@@ -126,7 +127,7 @@ optional arguments:
                  information will include a description in addition to the
                  standard name.
 
-
+```
 
 
 
@@ -190,7 +191,7 @@ S000007281 Q0250 COX2 Cytochrome c OXidase OXI1 OXII cytochrome c oxidase subuni
 
 > Standard Name --> Systematic Name  
 The script takes a list of yeast gene identifiers and changes them to be systematic names if it recognizes the standard name. It just adds the name to the new list if it doesn't match a systematic name. A file of the new information is produced.  
-The list has to have to have the gene identifiers at the start of each line. There can be other text on the line as long as the additional text is separated by space or tabs from the other data on the same line. (It would be a simple edit from `line_list = line.split()` to `line_list = line.split(',')` in order to convert this script to work for comma-separated values on each line.) 
+The list has to have to have the gene identifiers at the start of each line. There can be other text on the line as long as the additional text is separated by space or tabs from the identifier data at the start of the line. (It would be a simple edit from `line_list = line.split()` to `line_list = line.split(',')` in order to convert this script to work for comma-separated values on each line.) 
 The produced output will place the additional content on any line after the identifier after a tab. (Change the `"\t"` on line 255 to read `", "` to change the output to also be csv.)  
 Originally designed to adjust a gene list generated as output by Tophat to be useful for [T-profiler](http://www.t-profiler.org/index.html). As described [here](http://www.t-profiler.org/Saccharomyces/add_info/howtoupload.html), [T-profiler](http://www.t-profiler.org/index.html) wants the systematic ORF names at T-profiler. And it wants it with the fold change so there was the identifier and log2 ratio on each line of the list.  
 Note that T-profiler seemed to not accept data uploads May 2016, and [g:Profiler](http://biit.cs.ut.ee/gprofiler/), that is listed among T-profiler alternatives according to [GGSAASeqSP paper](http://www.nature.com/articles/srep06347), has functioning conversion ability built in for yeast gene lists.  
@@ -223,7 +224,7 @@ Q0250   ipsum_lorem_de_facotoris_du_mondi ahdjs ahsjshs s sjjsjsjs
 
 > Takes a list of genes provided in the SGD systematic name form and collects and produced as output information for each gene from YeastMine, that includes a more user friendly version of name, called the `Standard Name` at SGD (a.k.a. common name). It is suggested you redirect the output to a file yourself on the command line. Or adapt it to meet your needs.  
 This script can be particulary useful after getting a lits of genes in the SGD systematic name form so that you can see if any are of interest because most people are more familiar with the Standard Names.  
-THIS SCRIPT DOES NOT RETAIN ORDER OF THE INPUT LIST. Your are better off seeing the script `genes_in_list_with_SGD_Systematic_Name_to_standard_name.py` because that script will retain and match the input order. Additionally, script has better abilities and is  more user-friendly as well. This script is only kept here as it allows one to designate a set of genes of interest so that the members of that list can be determined to be members of a provided gene list. This ability has not yet been built into the newer, better script.
+THIS SCRIPT DOES NOT RETAIN ORDER OF THE INPUT LIST. Your are better off using the script `genes_in_list_with_SGD_Systematic_Name_to_standard_name.py` because that script will retain and match the input order. Additionally, that script has better abilities and is  more user-friendly as well. This script is only kept here as it allows one to designate a set of genes of interest so that the members of that list can be determined to be members of a provided gene list. This ability has not yet been built into the newer, better script `genes_in_list_with_SGD_Systematic_Name_to_standard_name.py`.
 
 ---
 
