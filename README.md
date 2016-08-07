@@ -95,6 +95,97 @@ The script makes a simulated yeast gene set of user-determined size and saves a 
 
 ---
 
+- genes_in_list_with_SGD_Systematic_Name_to_standard_name.py
+
+>  Systematic Name --> Standard ("common") Name
+Takes a list of genes provided in the SGD systematic name form and collects and produces as output the Standard Name at SGD (a.k.a. common name).
+Importantly, the information in the output file is in the same order as the input list, unlike `finding_genes_in_list_with_SGD_Systematic_Name.py`.
+
+While the default is to only send the standard (common) gene name to the output, the addition of the optional flag `--details` to the command call will expand the information sent to the output list beyond the standard name to a full list of details about the yeast gene. This will quickly allow one an overview of the gene information for many genes without use of SGD in a browser. The details printed on each line follow this order: primaryIdentifier, secondaryIdentifier, symbol, name, sgdAlias, featureType, and description.
+
+A related script that employs a gtf file, which is common for many Cufflinks-related pipelines, in order to convert systematic names to yeast standard (common) gene names is available, see `systematic_names_to_standard_names_using_cufflinks_gtf.py` in the [Adjust_lists repository](https://github.com/fomightez/sequencework/tree/master/Adjust_lists).
+
+**Usage**
+
+usage: genes_in_list_with_SGD_Systematic_Name_to_standard_name [-h] [-d] FILE
+
+genes_in_list_with_SGD_Systematic_Name_to_standard_name.py uses data from
+YeastMine to convert a list of systematic gene ids in a file to standard
+(common) gene names, where they exist. The list should be gene ids each on a
+separate line of the file. **** Script by Wayne Decatur (fomightez @ github)
+***
+
+positional arguments:
+  FILE           Name of file containing `systematic ids` list to convert.
+                 REQUIRED.
+
+optional arguments:
+  -h, --help     show this help message and exit
+  -d, --details  add this flag to have the outout file have an expanded set of
+                 information about the gene in place of the systematic id. The
+                 information will include a description in addition to the
+                 standard name.
+
+
+
+
+
+#####example of input and default output for `genes_in_list_with_SGD_Systematic_Name_to_standard_name.py`:
+
+sample of original input `gene_list.txt`:
+```
+YJL074C
+YNL088W
+YPR168W	1.03
+Q0250   ipsum_lorem_de_facotoris_du_mondi ahdjs ahsjshs s sjjsjsjs
+
+```
+
+**command:**
+
+    python genes_in_list_with_SGD_Systematic_Name_to_standard_name.py gene_list.txt
+
+**output after run:**
+(text in a file, called `gene_list_converted_to_std_id.txt`, with the contents below)
+```
+SMC3
+TOP2
+NUT2 1.03
+COX2 ipsum_lorem_de_facotoris_du_mondi ahdjs ahsjshs s sjjsjsjs
+
+
+```
+
+#####example of input and output for `genes_in_list_with_SGD_Systematic_Name_to_standard_name.py` with `--details` flag:
+
+
+sample of original input `gene_list.txt`:
+```
+YJL074C
+YNL088W
+YPR168W
+Q0250
+```
+
+
+**command:**
+
+    python genes_in_list_with_SGD_Systematic_Name_to_standard_name.py gene_list.txt --details
+
+**output after run:**
+(text in a file, called `gene_list_converted_to_std_id.txt`, with the contents below)
+```
+S000003610 YJL074C SMC3 Stability of MiniChromosomes cohesin subunit SMC3 ORF Subunit of the multiprotein cohesin complex; required for sister chromatid cohesion in mitotic cells; also required, with Rec8p, for cohesion and recombination during meiosis; phylogenetically conserved SMC chromosomal ATPase family member
+S000005032 YNL088W TOP2 TOPoisomerase TOR3 TRF3 DNA topoisomerase 2 ORF Topoisomerase II; relieves torsional strain in DNA by cleaving and re-sealing phosphodiester backbone of both positively and negatively supercoiled DNA; cleaves complementary strands; localizes to axial cores in meiosis; required for replication slow zone (RSZ) breakage following Mec1p inactivation; human homolog TOP2A implicated in cancers, and can complement yeast null mutant
+S000006372 YPR168W NUT2 Negative regulation of URS Two MED10 mediator complex subunit NUT2 ORF Subunit of the RNA polymerase II mediator complex; associates with core polymerase subunits to form the RNA polymerase II holoenzyme; required for transcriptional activation and has a role in basal transcription; protein abundance increases in response to DNA replication stress
+S000007281 Q0250 COX2 Cytochrome c OXidase OXI1 OXII cytochrome c oxidase subunit 2 ORF Subunit II of cytochrome c oxidase (Complex IV); Complex IV is the terminal member of the mitochondrial inner membrane electron transport chain; one of three mitochondrially-encoded subunits
+
+```
+
+
+
+---
+
 - geneID_list_to_systematic_names.py
 
 > Standard Name --> Systematic Name  
