@@ -2,9 +2,6 @@
 
 # see `Trying to convert Shafi's list to something that works in T-profiler.md` for info about this script
 
-# To do: make so input file name isn't hard coded into script, and the output
-# file name is based on the input.
-
 
 #*******************************************************************************
 ##################################
@@ -12,9 +9,6 @@
 
 ##################################
 #
-input_file_name = "culled_extracted_geneIDs_and_log2change.txt"
-
-output_file_name = "systematicIDs_and_log2change.txt"
 
 stored_conversion_data_file_prefix = "yeastmine_conversion_data" #
 # prefix for file name to save data for subsequent use or to use  from previous
@@ -48,15 +42,50 @@ progress_bar_use = False # `False` to disable by default because relies on
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 #*******************************************************************************
 #*******************************************************************************
 ###DO NOT EDIT BELOW HERE - ENTER VALUES ABOVE###
 
 import sys
 import os
+import argparse
 
 
 ###---------------------------HELPER FUNCTIONS---------------------------------###
+
+def generate_output_file_name(file_name):
+    '''
+    Takes a file name as an argument and returns string for the name of the
+    output file. The generated name is based on the original file
+    name.
+
+    Specific example
+    ================
+    Calling function with
+        ("file1.txt")
+    returns
+        "file1_with_sys_id.txt"
+    '''
+    main_part_of_name, file_extension = os.path.splitext(
+        file_name) #from http://stackoverflow.com/questions/541390/extracting-extension-from-filename-in-python
+    if '.' in file_name:  #I don't know if this is needed with the os.path.splitext method but I had it before so left it
+        return main_part_of_name + "_with_sys_id" + file_extension
+    else:
+        return file_name + "_with_sys_id"
+
 
 def generate_stored_data_file_name(file_name_prefix):
     '''
@@ -117,6 +146,43 @@ def generate_data_file(the_data_list):
 
 ###--------------------------END OF HELPER FUNCTIONS---------------------------###
 
+
+
+
+
+
+
+
+
+#*******************************************************************************
+###-----------------for parsing command line arguments-----------------------###
+parser=argparse.ArgumentParser(prog="systematic_names_to_standard_names_using_cufflinks_gtf",
+    description=" systematic_names_to_standard_names_using_cufflinks_gtf.py uses a `gtf` file \
+    that is output from Cufflinks to convert a list of systematic gene ids in a \
+    file to standard (common) gene names, where they exist. The list should be \
+    gene ids each on a separate line of the file. \
+    **** Script by Wayne Decatur   \
+    (fomightez @ github) ***")
+
+parser.add_argument("List", help="Names of file containing `systematic ids` list to convert. REQUIRED.", type=argparse.FileType('r'), metavar="FILE")
+
+#I would also like trigger help to display if no arguments provided because need at least one input file
+if len(sys.argv)==1:    #from http://stackoverflow.com/questions/4042452/display-help-message-with-python-argparse-when-script-is-called-without-any-argu
+    sys.stderr.write("********************************** \n")
+    sys.stderr.write("Error: too few arguments provided \n")
+    sys.stderr.write("********************************** \n")
+    parser.print_help()
+    sys.exit(1)
+args = parser.parse_args()
+id_list_file_stream = args.List
+
+
+
+
+
+
+
+###-----------------Actual Main portion of script---------------------------###
 
 # Use previously saved list of yeast gene info, or if none exists contact YeastMine
 # and get a list of the genes
@@ -286,8 +352,9 @@ new_file_text = ""
 lines_processed = 0
 # open input file and start reading
 sys.stderr.write("\nReading input file and converting...") #backspace at start to delete the spinner
-input_file_stream = open(input_file_name , "r")
-for line in input_file_stream:
+#input_file_stream = open(input_file_name , "r") # Don't need separate open when use `type=argparse.FileType`. It sets everything up automatically and you will actually cause errors if try to open when already open.
+
+for line in id_list_file_stream:
     lines_processed += 1
     # split on space or tab
     '''
@@ -315,8 +382,9 @@ for line in input_file_stream:
     	new_file_text = new_file_text + line
 
 #Completed scan of input file and therefore close file, write new file.
-sys.stderr.write( "\n"+ str(lines_processed) + " lines read from '" + input_file_name + "'.")
-input_file_stream.close()
+sys.stderr.write( "\n"+ str(lines_processed) + " lines read from '" + id_list_file_stream.name + "'.")
+# input_file_stream.close()  # Don't need because argparse handles when use `type=argparse.FileType`.
+output_file_name = generate_output_file_name(id_list_file_stream.name)
 output_file = open(output_file_name, "w")
 output_file.write(new_file_text.rstrip('\r\n')) #rstrip to remove trailing newline
 # from http://stackoverflow.com/questions/275018/how-can-i-remove-chomp-a-newline-in-python
