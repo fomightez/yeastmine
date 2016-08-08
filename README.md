@@ -203,8 +203,12 @@ TOP2
 NUT2	1.03
 COX2	ipsum_lorem_de_facotoris_du_mondi ahdjs ahsjshs s sjjsjsjs 
 ```
+**command:**
 
-output file produced after in `systematicIDs_and_log2change.txt`:
+    python geneID_list_to_systematic_names.py culled_extracted_geneIDs_and_log2change.txt
+
+**output after run:**
+(text in a file, called `culled_extracted_geneIDs_and_log2change_with_sys_id.txt`, with the contents below)
 ```
 YJL074C	
 YNL088W	
