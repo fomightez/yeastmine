@@ -256,6 +256,12 @@ In particular the `find_overlap_in_lists.py` script and related `find_overlap_in
 - [My sequence work repository](https://github.com/fomightez/sequencework) has several useful scripts. Especially check the `Adjust_Annotation`, `ConvertSeq`, and `RetrieveSeq` sub-directories for scripts dealing with operations in line with the folder names.
 
 
+Evaluation
+----------
+
+There is a sub-folder, called `Evaluation` in this one for comparing the results of output from certain scripts in order to evaluate the script realtive to another. As of now, this contains a script that goes beyond the `diff` built in to unix, and highlights only the differences that meet certain conditions.
+
+
 Additional Info
 ----------------
 
