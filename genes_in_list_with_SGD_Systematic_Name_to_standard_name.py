@@ -26,7 +26,7 @@
 # output will place the additional content on any line after the identifier
 # after a tab. (Change the "\t" on line 255 to read ", " to change the output to also be csv.)
 #
-# # While the default is to only send the standard (common) gene name to the
+# While the default is to only send the standard (common) gene name to the
 # output, the addition of the optional flag `both_orf_std` to the command call
 # will make the information sent the output list be the systematic name followed
 # by a tab and then the standard name. This will be convenient for use in text
