@@ -121,11 +121,17 @@ positional arguments:
                  REQUIRED.
 
 optional arguments:
-  -h, --help     show this help message and exit
-  -d, --details  add this flag to have the output file have an expanded set of
-                 information about the gene in place of the systematic id. The
-                 information will include a description in addition to the
-                 standard name.
+  -h, --help     show this help message and exit  
+  -b, --both_orf_std  add this flag to have produce an output file with both
+                      the systematic name and the standard name. The output
+                      file produced have the systematic name followed by the
+                      the standard name with a tab in between for conveinence
+                      in using in your favorite text editor or Microsfot
+                      Excel.  
+  -d, --details       add this flag to have the output file have an expanded
+                      set of information about the gene in place of the
+                      systematic id. The information will include a
+                      description in addition to the standard name.
 
 ```
 
