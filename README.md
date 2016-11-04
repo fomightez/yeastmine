@@ -122,7 +122,7 @@ positional arguments:
 
 optional arguments:
   -h, --help     show this help message and exit
-  -d, --details  add this flag to have the outout file have an expanded set of
+  -d, --details  add this flag to have the output file have an expanded set of
                  information about the gene in place of the systematic id. The
                  information will include a description in addition to the
                  standard name.
