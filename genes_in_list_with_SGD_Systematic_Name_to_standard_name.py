@@ -26,9 +26,14 @@
 # output will place the additional content on any line after the identifier
 # after a tab. (Change the "\t" on line 255 to read ", " to change the output to also be csv.)
 #
+# # While the default is to only send the standard (common) gene name to the
+# output, the addition of the optional flag `both_orf_std` to the command call
+# will make the information sent the output list be the systematic name followed
+# by a tab and then the standard name. This will be convenient for use in text
+# editors or Excel.
+#
 # While the default is to only send the standard (common) gene name to the
 # output, the addition of the optional flag `--details` to the command call will expand the information sent to the output list beyond the standard name to a full list of details about the yeast gene. This will quickly allow one an overview of the gene information for many genes without use of SGD in a browser. The details printed on each line follow this order: primaryIdentifier, secondaryIdentifier, symbol, name, organism.shortName, proteins.symbol?!?!??!, sgdAlias, featureType, and description. <-- I don't think it will have `proteins.symbol` so fix when know.
-#
 #
 #
 # Dependencies beyond the mostly standard libraries/modules:
@@ -235,11 +240,18 @@ parser=argparse.ArgumentParser(prog="genes_in_list_with_SGD_Systematic_Name_to_s
     (fomightez @ github) ***")
 
 parser.add_argument("List", help="Name of file containing `systematic ids` list to convert. REQUIRED.", type=argparse.FileType('r'), metavar="FILE")
+parser.add_argument("-b", "--both_orf_std",help=
+    "add this flag to have produce an output file with both the systematic name \
+    and the standard name. The output file produced have the systematic name \
+    followed by the the standard name with a tab in between for conveinence in \
+    using in your favorite text editor or Microsfot Excel.",
+    action="store_true")
 parser.add_argument("-d", "--details",help=
     "add this flag to have the output file have an expanded set of information \
     about the gene in place of the systematic id. The information will include \
     a description in addition to the standard name.",
     action="store_true")
+
 
 #I would also like trigger help to display if no arguments provided because need at least one input file
 if len(sys.argv)==1:    #from http://stackoverflow.com/questions/4042452/display-help-message-with-python-argparse-when-script-is-called-without-any-argu
@@ -248,6 +260,7 @@ if len(sys.argv)==1:    #from http://stackoverflow.com/questions/4042452/display
 args = parser.parse_args()
 input_file_stream = args.List
 include_expanded_gene_details = args.details
+output_both_sys_and_standard = args.both_orf_std
 
 
 
@@ -296,7 +309,6 @@ if os.path.isfile(stored_conversion_data_file) :
     from collections import defaultdict
     # just need a string as dictionary value since even if `include_expanded_gene_details`
     # is true the value of the dictionary will just a string of text
-    # just need a string as dictionary value since even if `include_expanded_gene_details`
     conversion_resolving_dictionary = defaultdict(str) # see http://ludovf.net/blog/python-collections-defaultdict/
 
 
@@ -314,6 +326,8 @@ if os.path.isfile(stored_conversion_data_file) :
         if include_expanded_gene_details:
             # all details will be used to replace the systematic id
             conversion_resolving_dictionary[gene_info[1]] = ' '.join(gene_info) # put \t between single quotes, instead of the space, to make tab separated
+        elif output_both_sys_and_standard:
+            conversion_resolving_dictionary[gene_info[1]] = gene_info[1] + "\t" + gene_info[2]
         else:
             # just the standard (common) name will be used to replace the
             # systematic id
@@ -329,7 +343,7 @@ else:
     # No saved file and so we need to contact YeastMine to get the data and
     # process it.
 
-    # Contacting YeastMinr with query
+    # Contacting YeastMine with query
     from intermine.webservice import Service
     service = Service("http://yeastmine.yeastgenome.org/yeastmine/service")
     query = service.new_query("SequenceFeature")
@@ -405,7 +419,9 @@ else:
                     " " + str(row["symbol"]) + " " +  str(row["name"]) + " " +
                     str(row["sgdAlias"]) + " " +  str(row["featureType"]) + " " +
                     str(row["description"]))
-
+            elif output_both_sys_and_standard:
+                conversion_resolving_dictionary[row["secondaryIdentifier"]] = (
+                    str(row["secondaryIdentifier"]) +"\t" + str(row["symbol"]))
             else:
                 # just the standard (common) name will be used to replace the
                 # systematic id.
@@ -450,6 +466,9 @@ else:
                     " " + str(row["symbol"]) + " " +  str(row["name"]) + " " +
                     str(row["sgdAlias"]) + " " +  str(row["featureType"]) + " "
                     + str(row["description"]))
+            elif output_both_sys_and_standard:
+                conversion_resolving_dictionary[row["secondaryIdentifier"]] = (
+                    str(row["secondaryIdentifier"]) +"\t" + str(row["symbol"]))
             else:
                 # just the standard (common) name will be used to replace the
                 # systematic id.
