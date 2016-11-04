@@ -236,7 +236,7 @@ parser=argparse.ArgumentParser(prog="genes_in_list_with_SGD_Systematic_Name_to_s
 
 parser.add_argument("List", help="Name of file containing `systematic ids` list to convert. REQUIRED.", type=argparse.FileType('r'), metavar="FILE")
 parser.add_argument("-d", "--details",help=
-    "add this flag to have the outout file have an expanded set of information \
+    "add this flag to have the output file have an expanded set of information \
     about the gene in place of the systematic id. The information will include \
     a description in addition to the standard name.",
     action="store_true")
