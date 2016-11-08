@@ -27,7 +27,7 @@
 # after a tab. (Change the "\t" on line 255 to read ", " to change the output to also be csv.)
 #
 # While the default is to only send the standard (common) gene name to the
-# output, the addition of the optional flag `both_orf_std` to the command call
+# output, the addition of the optional flag `--both_orf_std` to the command call
 # will make the information sent the output list be the systematic name followed
 # by a tab and then the standard name. This will be convenient for use in text
 # editors or Excel.
@@ -244,7 +244,7 @@ parser.add_argument("-b", "--both_orf_std",help=
     "add this flag to have produce an output file with both the systematic name \
     and the standard name. The output file produced have the systematic name \
     followed by the the standard name with a tab in between for conveinence in \
-    using in your favorite text editor or Microsfot Excel.",
+    using in your favorite text editor or Microsoft Excel.",
     action="store_true")
 parser.add_argument("-d", "--details",help=
     "add this flag to have the output file have an expanded set of information \
