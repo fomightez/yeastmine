@@ -543,11 +543,23 @@ for line in input_file_stream :
     # split on space or tab
     '''
     line_list = line.split(maxsplit=1) # Only want one split so anything after gets
-    # added to produced text. By not specifying delimiter, it splies on ANY whitespace, includint tabs, see http://stackoverflow.com/questions/4309684/how-in-python-to-split-a-string-with-unknown-number-of-spaces-as-separator and
+    # added to produced text. By not specifying delimiter, it splies on ANY whitespace, including tabs, see http://stackoverflow.com/questions/4309684/how-in-python-to-split-a-string-with-unknown-number-of-spaces-as-separator and
     # https://docs.python.org/3/library/stdtypes.html#sequence-types-str-unicode-list-tuple-bytearray-buffer-xrange
     gene_id = line_list[0]
     rest_of_line = line_list[1]
-    # ACK THAT SOLUTION ONLY WORKS WITH PYTHON 3!! Cannot specify `maxsplit` in 2.7
+    # ACK THAT SOLUTION ONLY WORKS WITH PYTHON 3!! Cannot specify `maxsplit` in 2.7 ----> NOT AS KEYWORD BUT IT WORKS AS AN UNMAED ARGUMENT!!! COULD HAVE USED!!!
+
+    # EXAMPLE
+    test = "this is a test"
+    splittext = test.split()
+    print splittext
+    >>>['this', 'is', 'a', 'test']
+    splittext = test.split(maxsplit=1)
+    >>> ERROR stuff
+    >>> TypeError: split() takes no keyword arguments
+    splittext = test.split(" ",1)
+    print splittext
+    >>>['this', 'is a test']
 
     '''
     # Since using Python 2, I'll split default way with no separator argument and then grab everything after as separate item. Cannot ust argument for calling split because want it to split on both space and tabs as it does when called without an argumnet in Python 2. see -> http://stackoverflow.com/questions/4309684/how-in-python-to-split-a-string-with-unknown-number-of-spaces-as-separator
