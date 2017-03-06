@@ -288,6 +288,7 @@ In particular the `find_overlap_in_lists.py` script and related `find_overlap_in
 
 - [My sequence work repository](https://github.com/fomightez/sequencework) has several useful scripts. Especially check the `Adjust_Annotation`, `ConvertSeq`, and `RetrieveSeq` sub-directories for scripts dealing with operations in line with the folder names.
 
+- [My yeast snoRNAs repoitory](https://github.com/fomightez/yeast_snornas) has a script useful for examining lists of upregulated or downregulated genes and classifying snoRNA genes present and assessing enrichment.
 
 Evaluation
 ----------
