@@ -138,7 +138,7 @@ optional arguments:
 
 
 
-#####example of input and default output for `genes_in_list_with_SGD_Systematic_Name_to_standard_name.py`:
+#### example of input and default output for `genes_in_list_with_SGD_Systematic_Name_to_standard_name.py`:
 
 sample of original input `gene_list.txt`:
 ```
@@ -161,7 +161,7 @@ NUT2 1.03
 COX2 ipsum_lorem_de_facotoris_du_mondi ahdjs ahsjshs s sjjsjsjs
 ```
 
-#####example of input and output for `genes_in_list_with_SGD_Systematic_Name_to_standard_name.py` with `--both_orf_std` flag:
+#### example of input and output for `genes_in_list_with_SGD_Systematic_Name_to_standard_name.py` with `--both_orf_std` flag:
 
 
 sample of original input `gene_list.txt`:
@@ -186,7 +186,7 @@ YPR168W	NUT2
 Q0250	COX2
 ```
 
-#####example of input and output for `genes_in_list_with_SGD_Systematic_Name_to_standard_name.py` with `--details` flag:
+#### example of input and output for `genes_in_list_with_SGD_Systematic_Name_to_standard_name.py` with `--details` flag:
 
 
 sample of original input `gene_list.txt`:
