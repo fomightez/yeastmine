@@ -3,7 +3,7 @@ Evaluation
 
 The scripts in this folder are for comparing the results of output from certain scripts in order to evaluate the script realtive to another.
 
-Sometines you'll produce related information by different means and you may find that you want to compare the results produced in a manner that is more advanced than using the built-in Unix `diff`command. These scripts address that. They are here because it is common one of the paths to produce output that is easier to compare with computer-assistance involves YeastMine.
+Sometines you'll produce related information by different means and you may find that you want to compare the results produced in a manner that is more advanced than using the built-in Unix `diff`command. These scripts address that. They are here because the use of YeastMine is commonly a route to producing output that is easier to compare with computer-assistance.
 
 
 
