@@ -345,7 +345,7 @@ else:
 
     # Contacting YeastMine with query
     from intermine.webservice import Service
-    service = Service("http://yeastmine.yeastgenome.org/yeastmine/service")
+    service = Service("https://yeastmine.yeastgenome.org:443/yeastmine/service") #seems current as of January 2018 from the YeastMine site example, I had also prior to this change in the script, run on my machine ` sudo easy_install intermine --upgrade`
     query = service.new_query("SequenceFeature")
     # The view specifies the output columns
     query.add_view(
