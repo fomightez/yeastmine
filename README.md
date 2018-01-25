@@ -28,6 +28,11 @@ If you are choosing to use a [PythonAnywhere](https://www.pythonanywhere.com/) a
  
     $ easy_install --user intermine
 
+**PRESENTLY ON PYTHON ANYWHERE IN EARLY 2018 I AM UNABLE TO USE YeastMine.**
+Present details:
+	* I looked at YeastMine presently and saw the current link to the site uses https and so I tried changing the address in my script to what is shown in samples, i.e., script obtained from going to https://yeastmine.yeastgenome.org/yeastmine/template.do?name=Gene_Transcript&scope=all and clicking link down below for `python` to open https://yeastmine.yeastgenome.org/yeastmine/templateAction.do .
+	* Ran updgrade of intermine with `python genes_ieasy_install --user --upgrade intermine`
+	* Still get Squid error running the sample script fro PythonAnywhere. Think it is related to fact for free PythonAnywhere accounts that things run through a proxy and the current `requests` package is broken for that, see https://www.pythonanywhere.com/forums/topic/761/ . That package is probably used in the intermine access or somethhing broken is. Since it is an overarching thing at the level of the popular requests package/https switch everyone is doing, maybe best to not try and make work from PythonAnywhere until the dust settles, since I think YeastMine may be working on my local Mac desktop for now. I'll just use that in the interim.
 
 On [SourceLair](https://www.sourcelair.com), while `easy_install intermine  ` didn't work, `pip install intermine` did work to install the InterMine module.
 
