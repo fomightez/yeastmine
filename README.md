@@ -5,7 +5,7 @@ YeastMine
 
 * Running these scripts does require InterMine Python Web Service Client module be installed on the system. See notes on installing the InterMine Python Web Service Client Module.
 
-* These scripts will work on free [PythonAnywhere](https://www.pythonanywhere.com/) accounts because InterMine and YeastMine were graciously added to the [Whitelisted sites for free users](https://www.pythonanywhere.com/whitelist/) when I requested. ***Thanks, PythonAnywhere!*** See [notes on installing](#installation-of-intermine-python-web-service-client-module) the InterMine Python Web Service Client Module on PythonAnywhere below.
+* THERE IS AN ISSUE RIGHT NOW (EARLY 2018) PREVENTING THESE FROM WORKING ON FREE ACCOUNTS, see below. These scripts will work on free [PythonAnywhere](https://www.pythonanywhere.com/) accounts because InterMine and YeastMine were graciously added to the [Whitelisted sites for free users](https://www.pythonanywhere.com/whitelist/) when I requested. ***Thanks, PythonAnywhere!*** See [notes on installing](#installation-of-intermine-python-web-service-client-module) the InterMine Python Web Service Client Module on PythonAnywhere below.
 
 * Of course, they will also work on your computer, server, or cloud instance or wherever you run Python programs that can access the internet. (On [SourceLair](https://www.sourcelair.com) `easy_install intermine  ` didn't work for adding the InterMine module, `pip install intermine` did work to install the InterMine module though; however, the company has now switched their business model to not include free accounts.)
 
@@ -34,7 +34,10 @@ Present details:
 	* Ran updgrade of intermine with `python genes_ieasy_install --user --upgrade intermine`
 	* Still get Squid error running the sample script fro PythonAnywhere. Think it is related to fact for free PythonAnywhere accounts that things run through a proxy and the current `requests` package is broken for that, see https://www.pythonanywhere.com/forums/topic/761/ . That package is probably used in the intermine access or somethhing broken is. Since it is an overarching thing at the level of the popular requests package/https switch everyone is doing, maybe best to not try and make work from PythonAnywhere until the dust settles, since I think YeastMine may be working on my local Mac desktop for now. I'll just use that in the interim.
 
-On [SourceLair](https://www.sourcelair.com), while `easy_install intermine  ` didn't work, `pip install intermine` did work to install the InterMine module.
+**ANOTHER FREE OPTION WHILE FREE ACCOUNTS ON PYTHONANYWHERE AND YEASTMINE SEEM TO NOT BE PLAYING NICE**
+I found I could launch versions of Jupyter notebooks served via the FREE Binder service, for example by pressing `launch binder` at https://github.com/fomightez/qgrid-notebooks, and start a Python 3 notebook that I could then install intermine into by pasting `!pip install intermine` into a cell and running and then yeastmine works. I could see it worked by pasting in and running the script obtained from going to https://yeastmine.yeastgenome.org/yeastmine/template.do?name=Gene_Transcript&scope=all and clicking link down below for `python` to open https://yeastmine.yeastgenome.org/yeastmine/templateAction.do . (I probably should put examples of that script and some of mine in a repo where I pre-install `intermine` and link to it from here.)
+
+While they are no longer opening a free account, on [SourceLair](https://www.sourcelair.com), while `easy_install intermine  ` didn't work, `pip install intermine` did work to install the InterMine module.
 
 
 Running the scripts
