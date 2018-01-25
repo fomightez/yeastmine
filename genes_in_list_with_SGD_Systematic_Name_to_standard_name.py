@@ -424,7 +424,7 @@ else:
                     str(row["secondaryIdentifier"]) +"\t" + str(row["symbol"]))
             else:
                 # just the standard (common) name will be used to replace the
-                # systematic id.
+                # systematic id. 
                 # The typecast to string is to avoid problem of
                 # concatenating NoneType objects to strings, since some of them
                 # have a `None` standard name where `None` is Python NoneType.
@@ -570,10 +570,14 @@ for line in input_file_stream :
     # END OF PYTHON 2 SPECIFIC APPROACH
 
 
-    # if the id is a key in the dictionay, do the conversion to the text that it
-    # has as a value, otherwise just copy the line text over to the text being
-    # collected for the output
-    if id_to_convert in conversion_resolving_dictionary:
+    # if the id is a key in the dictionary, do the conversion to the text that it
+    # has as a value. Unless that value is 'None' b/c no std name. If there 
+    # isn't a key or there is no standrd name, i.e., it is 'None', just copy the 
+    # provided line text over to the text being collected for the output
+    # NOTE: REPLACE THE BELOW LINE AS `if id_to_convert in conversion_resolving_dictionary:`
+    # IF YOU WANT TO HAVE `None` show up for those in YeastMine wihout a 
+    # standard name BECAUSE IT MARKS A NICE STARK CONTRAST IN SOME CASES. 
+    if id_to_convert in conversion_resolving_dictionary and conversion_resolving_dictionary[id_to_convert] != 'None':
         new_file_text = new_file_text + conversion_resolving_dictionary[id_to_convert] + " " + rest_of_line.strip() + '\n'
     else:
         new_file_text = new_file_text + line.strip() + '\n'
