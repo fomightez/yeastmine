@@ -17,6 +17,8 @@ As written, by default the comparison is case-insensitive.
 
 > This script goes beyond the `diff` built in to unix, and highlights only the differences that meet certain conditions.
 
+> Plus it isn't simply taking the `set` of each list because it is comparing across same line number of the input files.
+
 
 ---
 
