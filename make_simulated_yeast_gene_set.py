@@ -3,7 +3,8 @@
 # ver 0.1
 #
 #*******************************************************************************
-# USES Python 2.7 but should be convertable via 2to3, see https://docs.python.org/3.0/library/2to3.html
+# Compatible with both Python 2.7 and Python 3.6 (verified); written initially 
+# in Python 2.7 to hopefully be convertible to Python 3.
 #
 # PURPOSE: Makes a simulated yeast gene set of user-determined size and saves
 # a file of the gene list using the SGD systematic IDs each on individual lines.
@@ -15,7 +16,7 @@
 #
 #
 # Dependencies beyond the mostly standard libraries/modules:
-# none
+# intermine
 #
 #
 #
@@ -276,7 +277,7 @@ else:
 
     # The following two lines will be needed in every python script:
     from intermine.webservice import Service
-    service = Service("http://yeastmine.yeastgenome.org/yeastmine/service")
+    service = Service("https://yeastmine.yeastgenome.org:443/yeastmine/service") #seems current as of January 2018 from the YeastMine site example, I had also prior to this change in the script, run on my machine ` sudo easy_install intermine --upgrade`
     query = service.new_query("SequenceFeature")
     query.add_view(
         "primaryIdentifier", "featureType", "secondaryIdentifier", "description",
@@ -322,10 +323,10 @@ else:
 
     # Make the list
     sys.stderr.write("Please wait. Acquiring id information on every gene reported at YeastMine to ultimately make a subset containing the user-requested number...")
+    none_instances = 0
     if progress_bar_use:
         from tqdm import * #see about this module at https://github.com/tqdm/tqdm and https://github.com/noamraph/tqdm
         genes_processed = 0
-        none_instances = 0
         sys.stderr.write("\n") #go to next line so progress bar doesn't delete earlier text
         for row in tqdm(query.rows()):
             if row["secondaryIdentifier"] == None:
