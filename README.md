@@ -320,8 +320,7 @@ If you just want a `.gff` file for the whole Saccharomyces cerevisiae genome, as
 Related
 ------
 
-- [2018 Newsletter (with 25th anniversay of SGD)](https://wiki.yeastgenome.org/index.php/SGD_Newsletter,_Fall_2018) pointed out 
->"SGD has a collection of python scripts which demonstrate how to access data from the SGD API"
+- [2018 Newsletter (with 25th anniversay of SGD)](https://wiki.yeastgenome.org/index.php/SGD_Newsletter,_Fall_2018) pointed out,"SGD has a collection of python scripts which demonstrate how to access data from the SGD API".
 
 	Looks like a few put up in August 2018 [here](https://github.com/yeastgenome/sgd_api_examples)
 
