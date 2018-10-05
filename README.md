@@ -316,3 +316,13 @@ You can also make your own custom [YeastMine](http://yeastmine.yeastgenome.org/y
 Or if you want the Python code to run that query integrated into your workflow or to further adapt, you then access the code by clicking on the `Python` link down at the bottom middle once you have your built Query. You can edit them further after using Python coding as well.
 
 If you just want a `.gff` file for the whole Saccharomyces cerevisiae genome, as of March 2016, go the [yeast genome site](http://www.yeastgenome.org/) and toggle the menu under `Sequence` on the purple navigation bar and choose `Download` at the top of menu and it will bring you to [the page](http://www.yeastgenome.org/download-data/sequence). `saccharomyces_cerevisiae.gff` will be listed in the top section. Alternatively, on the the [yeast genome site](http://www.yeastgenome.org/) look for bold `Download` in upper right corner above the `Search` field and click on it. Use the left panel that comes up on the page to select `Sequence` from below the red `Download` text.
+
+Related
+------
+
+- [2018 Newsletter (with 25th anniversay of SGD)](https://wiki.yeastgenome.org/index.php/SGD_Newsletter,_Fall_2018) pointed out 
+>"SGD has a collection of python scripts which demonstrate how to access data from the SGD API"
+
+	Looks like a few put up in August 2018 [here](https://github.com/yeastgenome/sgd_api_examples)
+
+	Looking around also lead me to [SGD (yeastgenome) organization](https://github.com/yeastgenome).
