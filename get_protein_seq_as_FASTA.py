@@ -14,7 +14,7 @@ __version__ = "0.1.0"
 # Python 3. 
 #
 #
-# PURPOSE: Takes a Systematic Name, Standard Name, or symbol as defined 
+# PURPOSE: Takes a systematic name, standard name, or alias as defined 
 # at gene page at yeastgenome.org, rerieves the related information from 
 # YeastMine, and saves or returns the protein sequence in FASTA format.
 #
