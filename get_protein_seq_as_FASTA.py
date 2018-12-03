@@ -21,7 +21,13 @@ __version__ = "0.1.0"
 # Saves file if called from the command line. Can be used to send the FASTA file
 # record to IPython or Jupyter if main function called.
 #
-# 
+# Note search is only as good as the supplied gene identifier, and so it is best
+# to match the systematic name standard name seen on the corresponding gene page
+# at Saccharomyces Genome Database (SGD) (yeastgenome.org). If it is more 
+# convenient, you can test queries via web form at 
+# https://yeastmine.yeastgenome.org/yeastmine/template.do?name=Gene_ProteinSequence&scope=global .
+# The first result there and what this script returns should be the same.
+#
 #
 # Written to run from command line or imported into/pasted/loaded inside a 
 # Jupyter notebook cell.
@@ -180,7 +186,8 @@ def get_protein_seq_as_FASTA(gene_id,
     #---------------------------------------------------------------------------
     # Based on the template Gene_ProteinSequence available under 
     # 'Gene --> Protein Sequence' when clicking on 'Proteins' on navigation bar 
-    # in middle of page at YeastMine.
+    # in middle of page at YeastMine. Direct link:
+    # https://yeastmine.yeastgenome.org/yeastmine/template.do?name=Gene_ProteinSequence&scope=global
     
     service = Service("https://yeastmine.yeastgenome.org:443/yeastmine/service")
 
