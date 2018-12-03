@@ -68,7 +68,9 @@ Descriptions of the Scripts
 - get_protein_seq_as_FASTA.py
 
 > gene --> corresponding protein sequence in FASTA format  
-The script taakes a gene's systematic name, standard name, or alias as defined at gene page at yeastgenome.org, retrieves the associated information from YeastMine, and saves or returns the protein sequence in FASTA format.
+The script taakes a gene's systematic name, standard name, or alias as defined at gene page at yeastgenome.org, retrieves the associated information from YeastMine, and saves or returns the protein sequence in FASTA format. It depends on biopython installed as well; it will run in Jupyter sessions launched from [here]().
+
+---
 
 - counting_amino_acid_residues_in_all_yeast_proteins.py
 
