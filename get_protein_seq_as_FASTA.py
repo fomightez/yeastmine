@@ -15,7 +15,7 @@ __version__ = "0.1.0"
 #
 #
 # PURPOSE: Takes a Systematic Name, Standard Name, or symbol as defined 
-# at gene page at yeastyenome.org, rerieves the related information from 
+# at gene page at yeastgenome.org, rerieves the related information from 
 # YeastMine, and saves or returns the protein sequence in FASTA format.
 #
 # Saves file if called from the command line. Can be used to send the FASTA file
@@ -170,7 +170,7 @@ def get_protein_seq_as_FASTA(gene_id,
     '''
     Main function of script. 
     Takes a gene's systematic name, standard name, or alias as defined at gene 
-    page at yeastyenome.org, retrieves the associated information from 
+    page at yeastgenome.org, retrieves the associated information from 
     YeastMine, and saves or returns the protein sequence in FASTA format.
 
     Use `return_text` if calling from IPython or a Jupyter notebook and you want
