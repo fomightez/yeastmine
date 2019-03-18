@@ -85,6 +85,7 @@ __version__ = "0.1.0"
 CURRENT ACTUAL CODE FOR RUNNING/TESTING IN A NOTEBOOK WHEN IMPORTED/LOADED OR 
 PASTED IN ANOTHER CELL:
 s = get_protein_seq_as_FASTA("VPH1", return_text = True)
+%store s > protein_sequence.fa # to save it to a file in jupyter environment, too
 '''
 #
 #
@@ -144,8 +145,8 @@ def generate_output_file_name(gene_nom_info,extension_for_saving):
     '''
     Takes a dictionay of gene name information and and extension string and 
     returns string for the name of the output file. The generated name is made 
-    to mirror what you'd get using the download of sequence from 'Protein' tab 
-    at yeastgenome.org.
+    to mirror what you'd get using the 'Download Sequence (.fsa)' button from 
+    under the 'Sequence' tab for each gene at yeastgenome.org.
 
 
     Specific example
