@@ -72,6 +72,13 @@ The script taakes a gene's systematic name, standard name, or alias as defined a
 
 ---
 
+- get_gene_genomic_seq_as_FASTA.py 
+
+> gene --> corresponding genomic sequence in FASTA format  
+The script taakes a gene's systematic name, standard name, or alias as defined at gene page at yeastgenome.org, retrieves the associated information from YeastMine, and saves or returns the genomic DNA sequence for the gene in FASTA format. It depends on biopython installed as well; it will run in Jupyter sessions launched from [here](https://github.com/fomightez/cl_demo-binder).
+
+---
+
 - counting_amino_acid_residues_in_all_yeast_proteins.py
 
 > Uses YeastMine to fetch information on all verfied proteins (currently 5917 mid-2015) and produces a file containing a sorted table of the counts and percent of occurences of amino acid residues in all the yeast proteins. The table is sorted in decreasing order with the most abundant amino acids at the top. The table can easily be pasted into or opened in Excel or Google Spreadsheets as it is tab-separated values (`tsv`) document. The way the code is arranged you can easily substitute the part that accesses YeastMine to specify your own subset list of proteins to analyze for amino acid content.
