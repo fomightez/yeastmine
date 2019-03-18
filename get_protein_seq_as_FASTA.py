@@ -191,8 +191,7 @@ def get_protein_seq_as_FASTA(gene_id,
     
     service = Service("https://yeastmine.yeastgenome.org:443/yeastmine/service")
 
-    # Retrieve protein sequence for a specified <a href =
-    # "http://www.yeastgenome.org/yeastmine-help-page#gene">gene</a>.
+    # Retrieve protein sequence for a specified gene.
 
     template = service.get_template('Gene_ProteinSequence')
 
