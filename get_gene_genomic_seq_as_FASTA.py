@@ -232,7 +232,7 @@ def get_gene_genomic_seq_as_FASTA(gene_id,
     # based handling worked out in 
     # `delete_seq_following_pattern_within_multiFASTA.py`
     record_description = '{}'.format(gene_nom_info['sys_nom'])
-    record = SeqRecord(Seq(prot_seq, generic_dna), 
+    record = SeqRecord(Seq(genomic_seq, generic_dna), 
             id=gene_nom_info['std_nom'], description=record_description)#based
         # on https://www.biostars.org/p/48797/ and `.ungap()` method, see
         # https://github.com/biopython/biopython/issues/1511 , and `description`
