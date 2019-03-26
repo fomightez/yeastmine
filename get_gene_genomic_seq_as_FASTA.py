@@ -229,7 +229,7 @@ def get_gene_genomic_seq_as_FASTA(gene_id,
 
     # Make output FASTA record
     #---------------------------------------------------------------------------
-    # based handling worked out in 
+    # based on handling worked out in 
     # `delete_seq_following_pattern_within_multiFASTA.py`
     record_description = '{}'.format(gene_nom_info['sys_nom'])
     record = SeqRecord(Seq(genomic_seq, generic_dna), 
