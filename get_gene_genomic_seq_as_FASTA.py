@@ -308,7 +308,7 @@ if __name__ == "__main__" and '__file__' in globals():
         description="get_gene_genomic_seq_as_FASTA.py  \
         takes a gene's systematic name, standard name, or alias as defined at \
         gene page at yeastgenome.org, retieves the associated information from \
-        YeastMine, and saves the coding sequence in FASTA format.\
+        YeastMine, and saves the genomic DNA sequence in FASTA format.\
         **** Script by Wayne Decatur   \
         (fomightez @ github) ***")
 
