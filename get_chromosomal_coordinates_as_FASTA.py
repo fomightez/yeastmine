@@ -10,7 +10,7 @@ __version__ = "0.1.0"
 # ver 0.1
 #
 #*******************************************************************************
-# Verified compatible with both Python 2.7 and Python 3.6; written initially in 
+# Verified compatible with both Python 2.7 and Python 3.7; written initially in 
 # Python 3. 
 #
 #
