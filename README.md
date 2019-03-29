@@ -82,7 +82,8 @@ The script takes a gene's systematic name, standard name, or alias as defined at
 - get_chromosomal_coordinates_as_FASTA.py 
 
 > chromosome and coordinates --> corresponding genomic sequence in FASTA format  
-The script taakesTakes a chromosome designation and coordinates and gets from YeastMine the sequence of that region of the chromsome as FASTA format. Saves or returns the genomic sequence of the gene in FASTA format. Provide coordinates in ascending order for the Watson strand and descending order for the Crick strand as you'd do [here at SGD](https://www.yeastgenome.org/seqTools) under 'Search a specified chromosomal region of S288C genome'. It depends on biopython installed as well; it will run in Jupyter sessions launched from [here](https://github.com/fomightez/cl_demo-binder).
+The script takes a chromosome designation and coordinates and gets from YeastMine the sequence of that region of the chromsome as FASTA format. Saves or returns the genomic sequence of the gene in FASTA format. Provide coordinates in ascending order for the Watson strand and descending order for the Crick strand as you'd do [here at SGD](https://www.yeastgenome.org/seqTools) under 'Search a specified chromosomal region of S288C genome'. It depends on biopython installed as well; it will run in Jupyter sessions launched from [here](https://github.com/fomightez/cl_demo-binder).  
+This script is included the 'Preparation' section of my 'Demo of script to plot nt imbalance for sequence span'. To run it actively,  launch a binder session by clicking on the `launch binder` badges [here](https://github.com/fomightez/cl_sq_demo-binder) and select 'Demo of script to plot nt imbalance for sequence span' to run it actively.  The particular notebook can be viewed statically, nicely displayed [here](https://nbviewer.jupyter.org/github/fomightez/cl_sq_demo-binder/blob/master/notebooks/Demo%20of%20script%20to%20plot%20nt%20imbalance%20for%20sequence%20span.ipynb).
 
 ---
 
