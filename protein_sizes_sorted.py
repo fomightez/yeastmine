@@ -11,7 +11,8 @@
 ## IMPETUS FOR THIS SCRIPT:
 ## CURIOSITY ABOUT WHERE SOME GENE LIE IN THE SIZE SPECTRUM WITHIN YEAST.
 
-service = Service("http://yeastmine.yeastgenome.org/yeastmine/service")
+from intermine.webservice import Service
+service = Service("https://yeastmine.yeastgenome.org:443/yeastmine/service")
 
 # Get a new query on the class (table) you will be querying:
 query = service.new_query("Gene")
