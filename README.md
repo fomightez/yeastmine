@@ -324,6 +324,11 @@ In particular the `find_overlap_in_lists.py` script and related `find_overlap_in
 
 - [My yeast snoRNAs repoitory](https://github.com/fomightez/yeast_snornas) has a script useful for examining lists of upregulated or downregulated genes and classifying snoRNA genes present and assessing enrichment.
 
+Related Utilities by Others
+---------------------------
+
+[gencode_regions - Extract 3'UTR, 5'UTR, CDS, Promoter, Genes, Introns, Exons from GTF files](https://github.com/saketkc/gencode_regions#confused-about-exons-and-utrs) - Even has several yeast examples, such as [sacCerR64.ipynb](https://github.com/saketkc/gencode_regions/blob/master/notebooks/sacCerR64.ipynb) [S_cerevisiae-BY4741-stanford.ipynb](https://github.com/saketkc/gencode_regions/blob/master/notebooks/S_cerevisiae-BY4741-stanford.ipynb), besides other organisms.
+
 Evaluation
 ----------
 
