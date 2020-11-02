@@ -2,7 +2,7 @@
 # get_protein_seq_as_FASTA.py 
 __author__ = "Wayne Decatur" #fomightez on GitHub
 __license__ = "MIT"
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 
 # get_protein_seq_as_FASTA.py  by 
@@ -52,7 +52,8 @@ __version__ = "0.1.0"
 #
 #
 # VERSION HISTORY:
-# v.0.1. basic working version
+# v.0.1.0 basic working version
+# v.0.1.1 - removed `generic_protein` since Biopython removed Bio.alphabet
 
 #
 # to do:
@@ -133,7 +134,7 @@ from intermine.webservice import Service
 from Bio import SeqIO
 from Bio.Seq import Seq 
 from Bio.SeqRecord import SeqRecord 
-from Bio.Alphabet import generic_protein
+
 
 
 
@@ -230,7 +231,7 @@ def get_protein_seq_as_FASTA(gene_id,
     # based handling worked out in 
     # `delete_seq_following_pattern_within_multiFASTA.py`
     record_description = '{}'.format(gene_nom_info['sys_nom'])
-    record = SeqRecord(Seq(prot_seq, generic_protein), 
+    record = SeqRecord(Seq(prot_seq), 
             id=gene_nom_info['std_nom'], description=record_description)#based
         # on https://www.biostars.org/p/48797/ and `.ungap()` method, see
         # https://github.com/biopython/biopython/issues/1511 , and `description`
