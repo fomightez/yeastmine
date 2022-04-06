@@ -335,6 +335,10 @@ Related Utilities by Others
 >"Install and use genomes & gene annotations the easy way!  
 genomepy is designed to provide a simple and straightforward way to download and use genomic data. This includes (1) searching available data, (2) showing the available metadata, (3) automatically downloading, preprocessing and matching data and (4) generating optional aligner indexes. All with sensible, yet controllable defaults. Currently, genomepy supports UCSC, Ensembl and NCBI." - Includes an S. cerevisiae example.
 
+- The paper, [Rqc1 and other yeast proteins containing highly positively charged sequences are nottargets of the RQC complex](https://www.researchgate.net/publication/350350070_Rqc1_and_other_yeast_proteins_containing_highly_positively_charged_sequences_are_not_targets_of_the_RQC_complex) by Barros et al. 2021 includes (listed as part of first table under 'Experimental procedures') python scripts for finding clusters of arginine or lysine / poly-lysine / poly-arg or poly-lysine and arginine mix:
+	- "Searches for stretches containing a certain number of arginines and/or lysines, in a stretch of 10 amino acids in a protein." [arg_lys_stretches.py](https://github.com/mhoyerm/arg_lys_stretches)
+	- Seems there's also one for codons? "Finds the location of stretches containing only arginines and/or lysines in a protein, and the order of K and R does not matter." [arg_lys_sequence.py](https://github.com/mhoyerm/arg_lys_sequence) and "searches in the codon positions 3 and 4 or 4 and 5, the sequences AADTAT or AAVATT, where D is any nucleotide except C and V is any nucleotide except T. " [codons_finder.py](https://github.com/mhoyerm/Codons_finder)
+
 Evaluation
 ----------
 
