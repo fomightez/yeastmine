@@ -5,7 +5,7 @@ YeastMine
 https://x.com/yeastgenome/status/1807832546027491641    July 2024
 >"YeastMine is closing July 15 due to ongoing funding cuts. For more info: https://community.alliancegenome.org/t/yeastmine-shutting-down-july-15/7720 #yeast"
 
-That linked  note says:
+That linked note says:
 >"We are working to move the YeastMine data into AllianceMine, hosted by the Alliance of Genome Resources, of which SGD is a founding member." [SOURCE](https://community.alliancegenome.org/t/yeastmine-shutting-down-july-15/7720)
 
 
