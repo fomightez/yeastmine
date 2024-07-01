@@ -5,6 +5,10 @@ YeastMine
 https://x.com/yeastgenome/status/1807832546027491641    July 2024
 >"YeastMine is closing July 15 due to ongoing funding cuts. For more info: https://community.alliancegenome.org/t/yeastmine-shutting-down-july-15/7720 #yeast"
 
+That linked  note says:
+>"We are working to move the YeastMine data into AllianceMine, hosted by the Alliance of Genome Resources, of which SGD is a founding member." [SOURCE](https://community.alliancegenome.org/t/yeastmine-shutting-down-july-15/7720)
+
+
 
 * Scripts using [YeastMine](http://yeastmine.yeastgenome.org/yeastmine/begin.do) (populated by [SGD](www.yeastgenome.org/) and powered by [InterMine](http://intermine.github.io/intermine.org/)) to collect [Saccharomyces Genome Database](www.yeastgenome.org/) data.
 
