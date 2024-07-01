@@ -1,6 +1,11 @@
 YeastMine
 =========
 
+**IMPORTANT: As of July 1st 2024, Yeastmine is scehduled to be shut down July 15, 2024.**
+https://x.com/yeastgenome/status/1807832546027491641    July 2024
+>"YeastMine is closing July 15 due to ongoing funding cuts. For more info: https://community.alliancegenome.org/t/yeastmine-shutting-down-july-15/7720 #yeast"
+
+
 * Scripts using [YeastMine](http://yeastmine.yeastgenome.org/yeastmine/begin.do) (populated by [SGD](www.yeastgenome.org/) and powered by [InterMine](http://intermine.github.io/intermine.org/)) to collect [Saccharomyces Genome Database](www.yeastgenome.org/) data.
 
 * Running these scripts does require InterMine Python Web Service Client module be installed on the system. See notes on installing the InterMine Python Web Service Client Module.
